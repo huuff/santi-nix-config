@@ -1,5 +1,5 @@
 {
-  home-manager.users.santiago = { pkgs, scripts, ... }: {
+  home-manager.users.santiago = { pkgs, ... }: {
     imports = [ ./alacritty.nix ./screens.nix ];
     # Allow unfree packages
     xsession = {
@@ -89,7 +89,6 @@
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs;
       [
-        scripts.clipscrot
         pkgs.nixfmt-classic
         xsel # managing Xorg clipboard
         cachix
@@ -124,6 +123,8 @@
         ledger-live-desktop
         eksctl
         postman
+        claude-code
+        opencode
         clang # I just need it to build tree-sitter grammars in emacs
         lxappearance
         # TODO: Maybe put this somewhere else
